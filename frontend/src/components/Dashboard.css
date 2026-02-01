@@ -1,0 +1,374 @@
+/* Dashboard Styles */
+.dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 40px 20px;
+    /* top padding for navbar */
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dashboard-header h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #646cff 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.dashboard-subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Progreso global */
+.progreso-global {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.progreso-texto {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.progreso-numeros {
+    color: #a5a8ff;
+    font-weight: 600;
+}
+
+.progreso-barra {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.progreso-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #646cff 0%, #00d26a 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progreso-porcentaje {
+    color: #00d26a;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.dashboard-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Secciones de categoría */
+.categoria-section {
+    margin-bottom: 60px;
+}
+
+.categoria-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--cat-color, #646cff);
+}
+
+.categoria-emoji {
+    font-size: 1.5rem;
+}
+
+.categoria-header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Grid de conceptos */
+.conceptos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjetas de concepto */
+.concept-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.concept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--card-color, #646cff);
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--card-color, #646cff);
+}
+
+/* Header de la tarjeta */
+.card-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.card-title-group {
+    flex: 1;
+}
+
+.card-title-group h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars {
+    font-size: 0.8rem;
+}
+
+.rating-number {
+    color: var(--card-color, #646cff);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Descripción */
+.card-description {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Incapié */
+.card-incapie {
+    color: #00d26a;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    background: rgba(0, 210, 106, 0.08);
+    border-radius: 10px;
+    border-left: 3px solid #00d26a;
+    margin-bottom: 18px;
+}
+
+/* Clases a dominar */
+.clases-container {
+    margin-bottom: 18px;
+}
+
+.clases-label {
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.clases-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.clase-box {
+    background: rgba(100, 108, 255, 0.1);
+    border: 1px solid rgba(100, 108, 255, 0.3);
+    color: #a5a8ff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.clase-box:hover {
+    background: rgba(100, 108, 255, 0.2);
+    border-color: #646cff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Clase completada */
+.clase-box.completada {
+    background: rgba(0, 210, 106, 0.15);
+    border-color: rgba(0, 210, 106, 0.4);
+    color: #00d26a;
+}
+
+.clase-box.completada:hover {
+    background: rgba(0, 210, 106, 0.25);
+    border-color: #00d26a;
+}
+
+.check-icon {
+    margin-right: 6px;
+    font-weight: 700;
+}
+
+/* Progreso por tarjeta */
+.card-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+.card-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #646cff 0%, #00d26a 100%);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.card-progress-text {
+    color: #00d26a;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Ejemplo de código */
+.code-example {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.code-example pre {
+    margin: 0;
+}
+
+.code-example code {
+    color: #e2e8f0;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Botón de examen */
+.btn-examen {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #00d26a 0%, #00a854 100%);
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-examen:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 210, 106, 0.4);
+}
+
+/* Examen bloqueado */
+.examen-bloqueado {
+    background: rgba(255, 193, 7, 0.08);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #ffc107;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-header h1 {
+        font-size: 2rem;
+    }
+
+    .conceptos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .concept-card {
+        padding: 20px;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+
+    .card-title-group h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Scrollbar personalizado */
+.dashboard::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dashboard::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dashboard::-webkit-scrollbar-thumb {
+    background: rgba(100, 108, 255, 0.3);
+    border-radius: 4px;
+}
+
+.dashboard::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 108, 255, 0.5);
+}
