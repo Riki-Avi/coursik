@@ -100,7 +100,7 @@ function App() {
 
     try {
       const pregunta = preguntas[index]
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+      const API_URL = import.meta.env.VITE_API_URL || '';
       const response = await fetch(`${API_URL}/api/explicar`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
