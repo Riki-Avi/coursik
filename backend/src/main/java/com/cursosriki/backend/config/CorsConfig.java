@@ -18,16 +18,10 @@ public class CorsConfig implements WebMvcConfigurer {
     @SuppressWarnings("null")
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        // Obtener URL del frontend desde variable de entorno o usar default
-        String frontendUrl = System.getenv("FRONTEND_URL");
-        if (frontendUrl == null || frontendUrl.isBlank()) {
-            frontendUrl = "http://localhost:5173";
-        }
-
-        registry.addMapping("/api/**") // Rutas que permiten CORS
-                .allowedOrigins(frontendUrl, "https://cursos-riki.railway.app", "http://localhost:5173",
-                        "http://localhost:4173") // Origen permitido (React + Railway + Preview)
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // Métodos HTTP permitidos
-                .allowedHeaders("*"); // Permitir todos los headers
+        registry.addMapping("/**") // Rutas que permiten CORS
+                .allowedOriginPatterns("*") // Permitir cualquier origen
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
+                .allowedHeaders("*") // Permitir todos los headers
+                .allowCredentials(true);
     }
 }
